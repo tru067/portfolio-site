@@ -1,0 +1,807 @@
+/* App-specific styles */
+.app {
+  min-height: 100vh;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+}
+
+/* Shine animation keyframes */
+@keyframes shineAnimation {
+  0% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}
+
+.main-content {
+  margin-top: 80px; /* Account for fixed navbar height */
+  min-height: calc(100vh - 80px);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .main-content {
+    margin-top: 70px; /* Account for smaller navbar height on mobile */
+    min-height: calc(100vh - 70px);
+  }
+}
+
+@media (max-width: 600px) {
+  .main-content {
+    margin-top: 60px; /* Account for smaller navbar on very small screens */
+    min-height: calc(100vh - 60px);
+  }
+}
+
+/* Cassette Tape Visualizer Styles */
+.cassette-visualizer {
+  width: 100%;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.cassette-body {
+  background: linear-gradient(145deg, #3a3a3a, #2a2a2a);
+  border-radius: 12px;
+  padding: 25px;
+  border: 3px solid #444;
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  position: relative;
+}
+
+.cassette-body::before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  background: linear-gradient(145deg, #444, #222);
+  border-radius: 15px;
+  z-index: -1;
+}
+
+/* Cassette tape screw holes */
+.cassette-body::after {
+  content: '○ ○';
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #555;
+  font-size: 8px;
+  letter-spacing: 40px;
+  font-family: monospace;
+}
+
+.cassette-controls {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.track-button {
+  padding: 10px 18px;
+  border: 3px solid;
+  border-radius: 25px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05));
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  min-width: 65px;
+  text-align: center;
+  position: relative;
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.track-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 30%, transparent 70%);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+
+
+.track-button.active {
+  box-shadow:
+    0 0 20px rgba(255, 255, 255, 0.4),
+    0 6px 12px rgba(0, 0, 0, 0.4),
+    inset 0 2px 0 rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px) scale(1.05);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.1));
+}
+
+.cassette-window {
+  background: #000;
+  border-radius: 8px;
+  padding: 3px;
+  margin-bottom: 15px;
+  border: 2px solid #333;
+  position: relative;
+}
+
+/* Cassette tape perforations */
+.cassette-window::before,
+.cassette-window::after {
+  content: '';
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  width: 3px;
+  background: repeating-linear-gradient(
+    0deg,
+    #333 0px,
+    #333 2px,
+    transparent 2px,
+    transparent 5px
+  );
+}
+
+.cassette-window::before {
+  left: -1px;
+}
+
+.cassette-window::after {
+  right: -1px;
+}
+
+.window-frame {
+  background: #111;
+  border-radius: 5px;
+  padding: 2px;
+  height: 100%;
+}
+
+.visualizer-screen {
+  width: 100%;
+  background: #000;
+  border-radius: 3px;
+  display: block;
+}
+
+.cassette-info {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.track-name {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.track-description {
+  color: #ccc;
+  font-size: 13px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  opacity: 0.9;
+  line-height: 1.4;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* Cassette Categories Section */
+.cassette-categories {
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #444;
+}
+
+.category-label {
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+  margin-bottom: 12px;
+  opacity: 0.8;
+}
+
+.category-buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 5px;
+}
+
+.category-button {
+  padding: 8px 16px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.06));
+  border: 2px solid #666;
+  border-radius: 20px;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 600;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  min-width: 60px;
+  text-align: center;
+  position: relative;
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.category-button:hover {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.1));
+  border-color: #888;
+  transform: translateY(-1px);
+  box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.category-button.active {
+  background: linear-gradient(145deg, #ff9966, #ff5e62);
+  border-color: #ff9966;
+  color: #000;
+  box-shadow:
+    0 0 15px rgba(255, 153, 102, 0.4),
+    0 3px 8px rgba(0, 0, 0, 0.4),
+    inset 0 2px 0 rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px) scale(1.02);
+}
+
+/* No tracks message */
+.no-tracks-message {
+  color: #ccc;
+  font-size: 12px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  text-align: center;
+  padding: 20px;
+  opacity: 0.7;
+}
+
+/* Loading state for track buttons */
+.track-button.loading {
+  animation: pulse 1.5s infinite;
+  background: linear-gradient(145deg, #ffaa00, #ff8800) !important;
+  color: #000 !important;
+  box-shadow:
+    0 0 15px rgba(255, 170, 0, 0.6),
+    0 3px 8px rgba(0, 0, 0, 0.4),
+    inset 0 2px 0 rgba(255, 255, 255, 0.3);
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Loading state for disabled buttons */
+.track-button:disabled {
+  cursor: wait !important;
+  opacity: 0.7;
+}
+
+/* Updated Cassette Visualizer for Side-by-Side Layout */
+.cassette-visualizer {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+/* Responsive design for category buttons */
+@media (max-width: 768px) {
+  .cassette-categories {
+    margin-bottom: 15px;
+    padding-bottom: 12px;
+  }
+
+  .category-buttons {
+    gap: 8px;
+  }
+
+  .category-button {
+    padding: 6px 12px;
+    font-size: 10px;
+    min-width: 55px;
+  }
+
+  .cassette-controls {
+    gap: 6px;
+    justify-content: flex-start;
+  }
+
+  .track-button {
+    padding: 6px 12px;
+    font-size: 11px;
+    min-width: 50px;
+  }
+
+  .cassette-body {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 600px) {
+  .category-buttons {
+    gap: 6px;
+  }
+
+  .category-button {
+    padding: 5px 10px;
+    font-size: 9px;
+    min-width: 50px;
+  }
+}
+
+/* Resume Page Styles */
+.resume-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  position: relative;
+}
+
+.resume-text-container {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 50%, #1a1a1a 100%);
+  border-radius: 20px;
+  padding: 32px;
+  margin-bottom: 24px;
+  margin-left: 320px;
+  position: relative;
+  transition: all 0.4s ease;
+  overflow: hidden;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  min-height: 600px; /* Ensure enough height for floating */
+}
+
+/* Chrome surface reflection for resume container */
+.resume-text-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 20px;
+  background:
+    conic-gradient(from 45deg at 20% 20%, rgba(255, 255, 255, 0.8) 0deg, transparent 60deg, transparent 180deg, rgba(0, 0, 0, 0.1) 240deg, transparent 300deg),
+    radial-gradient(ellipse at 30% 30%, rgba(255, 255, 255, 0.6) 0%, transparent 50%);
+  pointer-events: none;
+  opacity: 0.3;
+  animation: shineAnimation 4s infinite linear;
+}
+
+/* Beveled edge effect for resume container */
+.resume-text-container::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 22px;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.3) 25%, transparent 50%, rgba(0, 0, 0, 0.1) 75%, rgba(0, 0, 0, 0.3) 100%);
+  z-index: -1;
+}
+
+/* Enhanced metallic shadow for resume container */
+.resume-text-container {
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.15),
+    0 8px 16px rgba(0, 0, 0, 0.1),
+    0 4px 8px rgba(255, 255, 255, 0.3) inset,
+    0 2px 4px rgba(255, 255, 255, 0.2) inset,
+    0 -2px 4px rgba(0, 0, 0, 0.1) inset;
+}
+
+.resume-text {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #cccccc;
+  margin: 0;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  position: relative;
+  z-index: 1;
+}
+
+.resume-text-container h1,
+.resume-text-container h2,
+.resume-text-container h3,
+.resume-text-container h4,
+.resume-text-container h5,
+.resume-text-container h6 {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  color: #cccccc;
+  margin-top: 25px;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.resume-text-container h1:first-child,
+.resume-text-container h2:first-child,
+.resume-text-container h3:first-child {
+  margin-top: 0;
+}
+
+/* Enhanced Resume Content Styling */
+.resume-header {
+  text-align: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 3px solid #cccccc;
+}
+
+.resume-header h1 {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  color: #cccccc;
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.company-header {
+  margin-bottom: 15px;
+  margin-top: 30px;
+}
+
+.company-name {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  color: #cccccc;
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 40px !important;
+  margin-bottom: 5px !important;
+  border-bottom: 2px solid #cccccc;
+  padding-bottom: 3px;
+  display: inline;
+}
+
+.company-location {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  color: #cccccc;
+  font-size: 12px;
+  font-weight: 400;
+  margin-left: 10px;
+}
+
+.job-title {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  color: #cccccc;
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 10px !important;
+  margin-bottom: 5px !important;
+}
+
+.job-dates {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  color: #cccccc;
+  font-size: 14px;
+  margin-bottom: 10px !important;
+  font-style: italic;
+}
+
+.resume-bullet {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #cccccc;
+  margin-bottom: 8px !important;
+  margin-left: 20px;
+  text-indent: -15px;
+}
+
+.resume-paragraph {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #cccccc;
+  margin-bottom: 8px !important;
+}
+
+.loading, .error {
+  text-align: center;
+  padding: 40px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  font-size: 16px;
+}
+
+.loading {
+  color: #3498db;
+}
+
+.error {
+  color: #e74c3c;
+  background-color: #fdf2f2;
+  border-radius: 4px;
+  border: 1px solid #fecaca;
+}
+
+/* Education Section */
+.education-section {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  width: 280px;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 50%, #1a1a1a 100%);
+  border-radius: 20px;
+  padding: 24px;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.3),
+    0 8px 16px rgba(0, 0, 0, 0.2),
+    0 4px 8px rgba(255, 255, 255, 0.1) inset,
+    0 2px 4px rgba(255, 255, 255, 0.05) inset,
+    0 -2px 4px rgba(0, 0, 0, 0.1) inset;
+  transition: all 0.4s ease;
+  z-index: 10;
+}
+
+.education-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 20px;
+  background:
+    conic-gradient(from 45deg at 20% 20%, rgba(255, 255, 255, 0.8) 0deg, transparent 60deg, transparent 180deg, rgba(0, 0, 0, 0.1) 240deg, transparent 300deg),
+    radial-gradient(ellipse at 30% 30%, rgba(255, 255, 255, 0.6) 0%, transparent 50%);
+  pointer-events: none;
+  opacity: 0.3;
+  animation: shineAnimation 4s infinite linear;
+}
+
+.education-title {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  color: #cccccc;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-align: center;
+  border-bottom: 2px solid #cccccc;
+  padding-bottom: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.education-content {
+  position: relative;
+  z-index: 1;
+}
+
+.school-name {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  color: #cccccc;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  margin-top: 0;
+}
+
+.graduation, .degree, .minor, .honors {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  color: #cccccc;
+  font-size: 14px;
+  margin-bottom: 6px;
+  margin-top: 0;
+}
+
+.coursework-title {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  color: #cccccc;
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 12px;
+  margin-bottom: 4px;
+}
+
+.courses {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  color: #cccccc;
+  font-size: 13px;
+  margin-bottom: 6px;
+  line-height: 1.4;
+  margin-top: 0;
+}
+
+/* Skills Section */
+.skills-section {
+  position: absolute;
+  left: 20px;
+  top: 540px; /* Position below education section */
+  width: 280px;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 50%, #1a1a1a 100%);
+  border-radius: 20px;
+  padding: 24px;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.3),
+    0 8px 16px rgba(0, 0, 0, 0.2),
+    0 4px 8px rgba(255, 255, 255, 0.1) inset,
+    0 2px 4px rgba(255, 255, 255, 0.05) inset,
+    0 -2px 4px rgba(0, 0, 0, 0.1) inset;
+  transition: all 0.4s ease;
+  z-index: 10;
+}
+
+.skills-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 20px;
+  background:
+    conic-gradient(from 45deg at 20% 20%, rgba(255, 255, 255, 0.8) 0deg, transparent 60deg, transparent 180deg, rgba(0, 0, 0, 0.1) 240deg, transparent 300deg),
+    radial-gradient(ellipse at 30% 30%, rgba(255, 255, 255, 0.6) 0%, transparent 50%);
+  pointer-events: none;
+  opacity: 0.3;
+  animation: shineAnimation 4s infinite linear;
+}
+
+.skills-title {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  color: #cccccc;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-align: center;
+  border-bottom: 2px solid #cccccc;
+  padding-bottom: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.skills-content {
+  position: relative;
+  z-index: 1;
+}
+
+.skill-category {
+  margin-bottom: 20px;
+}
+
+.skill-category:last-child {
+  margin-bottom: 0;
+}
+
+.skill-category-title {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  color: #cccccc;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  margin-top: 0;
+}
+
+.skill-items {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  color: #cccccc;
+  font-size: 14px;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Responsive design for resume */
+@media (max-width: 768px) {
+  .resume-wrapper {
+    padding: 15px;
+  }
+
+  .education-section {
+    position: static;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .skills-section {
+    position: static;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .resume-text-container {
+    margin-left: 0;
+  }
+
+  .resume-text {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 600px) {
+  .resume-wrapper {
+    padding: 10px;
+  }
+
+  .resume-text-container {
+    padding: 15px;
+  }
+
+  .resume-text {
+    font-size: 14px;
+  }
+}
