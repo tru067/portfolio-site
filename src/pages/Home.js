@@ -48,7 +48,7 @@ function Home() {
 
         <div className="hero-content">
           <div className="hero-description">
-            <h1 className="hero-title">Music, Storytelling, and Sound Design</h1>
+            <h1 className="hero-title">Poop, Storytelling, and Sound Design</h1>
             <p>I'm Truman Gaynes, a New York-based music technologist and licensing coordinator connecting sound to story across entertainment, fashion, and brands. I compose daily, edit dialogue and ADR, and manage organized delivery workflows that help creative teams move faster.</p>
           </div>
         </div>
