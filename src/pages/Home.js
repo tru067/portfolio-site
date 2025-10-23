@@ -33,7 +33,7 @@ function Home() {
 
   return (
     <div className="page">
-      {/* Hero Section - 2 Columsdfn Layout */}
+      {/* Hero Section - 2 Column Layout */}
       <div className="hero-section-2col">
         <div className="hero-image">
             <img
