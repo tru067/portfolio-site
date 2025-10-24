@@ -47,13 +47,16 @@
 }
 
 .cassette-body {
-  background: linear-gradient(145deg, #3a3a3a, #2a2a2a);
+  background:
+    linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 25%, #333333 50%, #2a2a2a 75%, #1a1a1a 100%),
+    linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #2a2a2a 100%);
   border-radius: 12px;
   padding: 25px;
-  border: 3px solid #444;
+  border: 2px solid rgba(0, 255, 0, 0.3);
   box-shadow:
-    0 10px 30px rgba(0, 0, 0, 0.6),
-    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    0 0 20px rgba(0, 255, 0, 0.2),
+    0 8px 16px rgba(0, 255, 0, 0.1),
+    0 4px 8px rgba(0, 255, 0, 0.2) inset;
   position: relative;
 }
 
@@ -64,22 +67,24 @@
   left: -3px;
   right: -3px;
   bottom: -3px;
-  background: linear-gradient(145deg, #444, #222);
+  background:
+    linear-gradient(135deg, rgba(0, 255, 0, 0.3) 0%, rgba(0, 200, 0, 0.2) 50%, rgba(0, 0, 0, 0.4) 100%);
   border-radius: 15px;
   z-index: -1;
 }
 
-/* Cassette tape screw holes */
+/* Matrix cassette tape screw holes */
 .cassette-body::after {
   content: '○ ○';
   position: absolute;
   top: 8px;
   left: 50%;
   transform: translateX(-50%);
-  color: #555;
+  color: #00ff00;
   font-size: 8px;
   letter-spacing: 40px;
   font-family: monospace;
+  text-shadow: 0 0 5px rgba(0, 255, 0, 0.6);
 }
 
 .cassette-controls {
@@ -92,10 +97,11 @@
 
 .track-button {
   padding: 10px 18px;
-  border: 3px solid;
+  border: 2px solid rgba(0, 255, 0, 0.3);
   border-radius: 25px;
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05));
-  color: #fff;
+  background:
+    linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(26, 26, 26, 0.9) 100%);
+  color: #00ff00;
   font-size: 11px;
   font-weight: 700;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
@@ -106,9 +112,11 @@
   min-width: 65px;
   text-align: center;
   position: relative;
+  text-shadow: 0 0 5px rgba(0, 255, 0, 0.3);
   box-shadow:
+    0 0 10px rgba(0, 255, 0, 0.2),
     0 2px 4px rgba(0, 0, 0, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    inset 0 1px 0 rgba(0, 255, 0, 0.2);
 }
 
 .track-button::before {
@@ -129,11 +137,14 @@
 
 .track-button.active {
   box-shadow:
-    0 0 20px rgba(255, 255, 255, 0.4),
-    0 6px 12px rgba(0, 0, 0, 0.4),
-    inset 0 2px 0 rgba(255, 255, 255, 0.3);
+    0 0 20px rgba(0, 255, 0, 0.6),
+    0 6px 12px rgba(0, 255, 0, 0.3),
+    inset 0 2px 0 rgba(0, 255, 0, 0.4);
   transform: translateY(-2px) scale(1.05);
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.1));
+  background:
+    linear-gradient(135deg, rgba(0, 255, 0, 0.3) 0%, rgba(0, 200, 0, 0.4) 100%);
+  border-color: #00ff00;
+  color: #000;
 }
 
 .cassette-window {
@@ -141,11 +152,14 @@
   border-radius: 8px;
   padding: 3px;
   margin-bottom: 15px;
-  border: 2px solid #333;
+  border: 2px solid rgba(0, 255, 0, 0.3);
   position: relative;
+  box-shadow:
+    0 0 10px rgba(0, 255, 0, 0.2),
+    inset 0 0 10px rgba(0, 255, 0, 0.1);
 }
 
-/* Cassette tape perforations */
+/* Matrix cassette tape perforations */
 .cassette-window::before,
 .cassette-window::after {
   content: '';
@@ -155,8 +169,8 @@
   width: 3px;
   background: repeating-linear-gradient(
     0deg,
-    #333 0px,
-    #333 2px,
+    rgba(0, 255, 0, 0.6) 0px,
+    rgba(0, 255, 0, 0.6) 2px,
     transparent 2px,
     transparent 5px
   );
@@ -190,34 +204,36 @@
 }
 
 .track-name {
-  color: #fff;
+  color: #00ff00;
   font-size: 16px;
   font-weight: 600;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   margin-bottom: 4px;
   text-transform: uppercase;
   letter-spacing: 1px;
+  text-shadow: 0 0 8px rgba(0, 255, 0, 0.4);
 }
 
 .track-description {
-  color: #ccc;
+  color: #7fff7f;
   font-size: 13px;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   opacity: 0.9;
   line-height: 1.4;
   max-width: 500px;
   margin: 0 auto;
+  text-shadow: 0 0 5px rgba(0, 255, 0, 0.3);
 }
 
-/* Cassette Categories Section */
+/* Matrix Cassette Categories Section */
 .cassette-categories {
   margin-bottom: 20px;
   padding-bottom: 15px;
-  border-bottom: 2px solid #444;
+  border-bottom: 2px solid rgba(0, 255, 0, 0.3);
 }
 
 .category-label {
-  color: #fff;
+  color: #00ff00;
   font-size: 12px;
   font-weight: 700;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
@@ -226,6 +242,7 @@
   text-align: center;
   margin-bottom: 12px;
   opacity: 0.8;
+  text-shadow: 0 0 5px rgba(0, 255, 0, 0.3);
 }
 
 .category-buttons {
@@ -238,10 +255,11 @@
 
 .category-button {
   padding: 8px 16px;
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.06));
-  border: 2px solid #666;
+  background:
+    linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(26, 26, 26, 0.9) 100%);
+  border: 2px solid rgba(0, 255, 0, 0.3);
   border-radius: 20px;
-  color: #fff;
+  color: #00ff00;
   font-size: 11px;
   font-weight: 600;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
@@ -252,18 +270,22 @@
   min-width: 60px;
   text-align: center;
   position: relative;
+  text-shadow: 0 0 5px rgba(0, 255, 0, 0.3);
   box-shadow:
+    0 0 10px rgba(0, 255, 0, 0.2),
     0 2px 4px rgba(0, 0, 0, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    inset 0 1px 0 rgba(0, 255, 0, 0.2);
 }
 
 .category-button:hover {
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.1));
-  border-color: #888;
+  background:
+    linear-gradient(135deg, rgba(0, 255, 0, 0.2) 0%, rgba(0, 200, 0, 0.3) 100%);
+  border-color: #00ff00;
   transform: translateY(-1px);
   box-shadow:
-    0 4px 8px rgba(0, 0, 0, 0.4),
-    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    0 0 15px rgba(0, 255, 0, 0.4),
+    0 4px 8px rgba(0, 255, 0, 0.3),
+    inset 0 1px 0 rgba(0, 255, 0, 0.3);
 }
 
 .category-button.active {
@@ -277,14 +299,15 @@
   transform: translateY(-1px) scale(1.02);
 }
 
-/* No tracks message */
+/* Matrix no tracks message */
 .no-tracks-message {
-  color: #ccc;
+  color: #7fff7f;
   font-size: 12px;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   text-align: center;
   padding: 20px;
   opacity: 0.7;
+  text-shadow: 0 0 5px rgba(0, 255, 0, 0.3);
 }
 
 /* Loading state for track buttons */
@@ -378,10 +401,45 @@
   margin: 0 auto;
   padding: 20px;
   position: relative;
+  margin-top: 40px;
+}
+
+.resume-container {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 40px;
+  align-items: start;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.resume-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: sticky;
+  top: 100px;
+}
+
+.resume-main {
+  background:
+    linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(26, 26, 26, 0.9) 100%);
+  border: 2px solid rgba(0, 255, 0, 0.3);
+  border-radius: 20px;
+  padding: 32px;
+  position: relative;
+  overflow: hidden;
+  box-shadow:
+    0 0 20px rgba(0, 255, 0, 0.2),
+    0 8px 16px rgba(0, 255, 0, 0.1),
+    0 4px 8px rgba(0, 255, 0, 0.2) inset;
 }
 
 .resume-text-container {
-  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 50%, #1a1a1a 100%);
+  background:
+    linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 25%, #333333 50%, #2a2a2a 75%, #1a1a1a 100%),
+    linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #2a2a2a 100%);
   border-radius: 20px;
   padding: 32px;
   margin-bottom: 24px;
@@ -389,11 +447,15 @@
   position: relative;
   transition: all 0.4s ease;
   overflow: hidden;
-  border: 2px solid rgba(255, 255, 255, 0.8);
+  border: 2px solid rgba(0, 255, 0, 0.3);
   min-height: 600px; /* Ensure enough height for floating */
+  box-shadow:
+    0 0 20px rgba(0, 255, 0, 0.2),
+    0 8px 16px rgba(0, 255, 0, 0.1),
+    0 4px 8px rgba(0, 255, 0, 0.2) inset;
 }
 
-/* Chrome surface reflection for resume container */
+/* Matrix surface reflection for resume container */
 .resume-text-container::before {
   content: '';
   position: absolute;
@@ -403,14 +465,14 @@
   bottom: 0;
   border-radius: 20px;
   background:
-    conic-gradient(from 45deg at 20% 20%, rgba(255, 255, 255, 0.8) 0deg, transparent 60deg, transparent 180deg, rgba(0, 0, 0, 0.1) 240deg, transparent 300deg),
-    radial-gradient(ellipse at 30% 30%, rgba(255, 255, 255, 0.6) 0%, transparent 50%);
+    conic-gradient(from 45deg at 20% 20%, rgba(0, 255, 0, 0.3) 0deg, transparent 60deg, transparent 180deg, rgba(0, 0, 0, 0.1) 240deg, transparent 300deg),
+    radial-gradient(ellipse at 30% 30%, rgba(0, 255, 0, 0.2) 0%, transparent 50%);
   pointer-events: none;
-  opacity: 0.3;
+  opacity: 0.7;
   animation: shineAnimation 4s infinite linear;
 }
 
-/* Beveled edge effect for resume container */
+/* Matrix edge effect for resume container */
 .resume-text-container::after {
   content: '';
   position: absolute;
@@ -420,7 +482,7 @@
   bottom: -2px;
   border-radius: 22px;
   background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.3) 25%, transparent 50%, rgba(0, 0, 0, 0.1) 75%, rgba(0, 0, 0, 0.3) 100%);
+    linear-gradient(135deg, rgba(0, 255, 0, 0.6) 0%, rgba(0, 255, 0, 0.2) 25%, transparent 50%, rgba(0, 0, 0, 0.1) 75%, rgba(0, 0, 0, 0.3) 100%);
   z-index: -1;
 }
 
@@ -440,12 +502,13 @@
     sans-serif;
   font-size: 16px;
   line-height: 1.6;
-  color: #cccccc;
+  color: #00ff00;
   margin: 0;
   white-space: pre-wrap;
   word-wrap: break-word;
   position: relative;
   z-index: 1;
+  text-shadow: 0 0 5px rgba(0, 255, 0, 0.3);
 }
 
 .resume-text-container h1,
@@ -457,10 +520,11 @@
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-  color: #cccccc;
+  color: #00ff00;
   margin-top: 25px;
   margin-bottom: 10px;
   font-weight: 600;
+  text-shadow: 0 0 8px rgba(0, 255, 0, 0.4);
 }
 
 .resume-text-container h1:first-child,
@@ -474,19 +538,20 @@
   text-align: center;
   margin-bottom: 30px;
   padding-bottom: 20px;
-  border-bottom: 3px solid #cccccc;
+  border-bottom: 3px solid rgba(0, 255, 0, 0.3);
 }
 
 .resume-header h1 {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-  color: #cccccc;
+  color: #00ff00;
   font-size: 32px;
   font-weight: 700;
   margin: 0;
   letter-spacing: 2px;
   text-transform: uppercase;
+  text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
 }
 
 .company-header {
@@ -498,45 +563,49 @@
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-  color: #cccccc;
+  color: #00ff00;
   font-size: 18px;
   font-weight: 600;
   margin-top: 40px !important;
   margin-bottom: 5px !important;
-  border-bottom: 2px solid #cccccc;
+  border-bottom: 2px solid rgba(0, 255, 0, 0.3);
   padding-bottom: 3px;
   display: inline;
+  text-shadow: 0 0 8px rgba(0, 255, 0, 0.4);
 }
 
 .company-location {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-  color: #cccccc;
+  color: #7fff7f;
   font-size: 12px;
   font-weight: 400;
   margin-left: 10px;
+  text-shadow: 0 0 5px rgba(0, 255, 0, 0.3);
 }
 
 .job-title {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-  color: #cccccc;
+  color: #00ff00;
   font-size: 16px;
   font-weight: 600;
   margin-top: 10px !important;
   margin-bottom: 5px !important;
+  text-shadow: 0 0 8px rgba(0, 255, 0, 0.4);
 }
 
 .job-dates {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-  color: #cccccc;
+  color: #7fff7f;
   font-size: 14px;
   margin-bottom: 10px !important;
   font-style: italic;
+  text-shadow: 0 0 5px rgba(0, 255, 0, 0.3);
 }
 
 .resume-bullet {
@@ -545,10 +614,11 @@
     sans-serif;
   font-size: 15px;
   line-height: 1.6;
-  color: #cccccc;
+  color: #00ff00;
   margin-bottom: 8px !important;
   margin-left: 20px;
   text-indent: -15px;
+  text-shadow: 0 0 5px rgba(0, 255, 0, 0.3);
 }
 
 .resume-paragraph {
@@ -557,8 +627,9 @@
     sans-serif;
   font-size: 15px;
   line-height: 1.6;
-  color: #cccccc;
+  color: #7fff7f;
   margin-bottom: 8px !important;
+  text-shadow: 0 0 5px rgba(0, 255, 0, 0.3);
 }
 
 .loading, .error {
@@ -571,34 +642,33 @@
 }
 
 .loading {
-  color: #3498db;
+  color: #00ff00;
+  text-shadow: 0 0 5px rgba(0, 255, 0, 0.3);
 }
 
 .error {
-  color: #e74c3c;
-  background-color: #fdf2f2;
+  color: #ff4444;
+  background-color: rgba(255, 68, 68, 0.1);
   border-radius: 4px;
-  border: 1px solid #fecaca;
+  border: 1px solid rgba(255, 68, 68, 0.3);
+  text-shadow: 0 0 5px rgba(255, 68, 68, 0.3);
 }
 
 /* Education Section */
 .education-section {
-  position: absolute;
-  left: 20px;
-  top: 20px;
-  width: 280px;
-  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 50%, #1a1a1a 100%);
+  position: static;
+  width: 100%;
+  background:
+    linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 25%, #333333 50%, #2a2a2a 75%, #1a1a1a 100%),
+    linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #2a2a2a 100%);
   border-radius: 20px;
   padding: 24px;
-  border: 2px solid rgba(255, 255, 255, 0.8);
+  border: 2px solid rgba(0, 255, 0, 0.3);
   box-shadow:
-    0 20px 40px rgba(0, 0, 0, 0.3),
-    0 8px 16px rgba(0, 0, 0, 0.2),
-    0 4px 8px rgba(255, 255, 255, 0.1) inset,
-    0 2px 4px rgba(255, 255, 255, 0.05) inset,
-    0 -2px 4px rgba(0, 0, 0, 0.1) inset;
+    0 0 20px rgba(0, 255, 0, 0.2),
+    0 8px 16px rgba(0, 255, 0, 0.1),
+    0 4px 8px rgba(0, 255, 0, 0.2) inset;
   transition: all 0.4s ease;
-  z-index: 10;
 }
 
 .education-section::before {
@@ -621,15 +691,16 @@
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-  color: #cccccc;
+  color: #00ff00;
   font-size: 20px;
   font-weight: 700;
   margin-bottom: 20px;
   text-align: center;
-  border-bottom: 2px solid #cccccc;
+  border-bottom: 2px solid rgba(0, 255, 0, 0.3);
   padding-bottom: 10px;
   position: relative;
   z-index: 1;
+  text-shadow: 0 0 8px rgba(0, 255, 0, 0.4);
 }
 
 .education-content {
@@ -641,63 +712,65 @@
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-  color: #cccccc;
+  color: #00ff00;
   font-size: 16px;
   font-weight: 600;
   margin-bottom: 8px;
   margin-top: 0;
+  text-shadow: 0 0 8px rgba(0, 255, 0, 0.4);
 }
 
 .graduation, .degree, .minor, .honors {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-  color: #cccccc;
+  color: #7fff7f;
   font-size: 14px;
   margin-bottom: 6px;
   margin-top: 0;
+  text-shadow: 0 0 5px rgba(0, 255, 0, 0.3);
 }
 
 .coursework-title {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-  color: #cccccc;
+  color: #00ff00;
   font-size: 14px;
   font-weight: 600;
   margin-top: 12px;
   margin-bottom: 4px;
+  text-shadow: 0 0 8px rgba(0, 255, 0, 0.4);
 }
 
 .courses {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-  color: #cccccc;
+  color: #7fff7f;
   font-size: 13px;
   margin-bottom: 6px;
   line-height: 1.4;
   margin-top: 0;
+  text-shadow: 0 0 5px rgba(0, 255, 0, 0.3);
 }
 
 /* Skills Section */
 .skills-section {
-  position: absolute;
-  left: 20px;
-  top: 540px; /* Position below education section */
-  width: 280px;
-  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 50%, #1a1a1a 100%);
+  position: static;
+  width: 100%;
+  margin-top: 20px;
+  background:
+    linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 25%, #333333 50%, #2a2a2a 75%, #1a1a1a 100%),
+    linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #2a2a2a 100%);
   border-radius: 20px;
   padding: 24px;
-  border: 2px solid rgba(255, 255, 255, 0.8);
+  border: 2px solid rgba(0, 255, 0, 0.3);
   box-shadow:
-    0 20px 40px rgba(0, 0, 0, 0.3),
-    0 8px 16px rgba(0, 0, 0, 0.2),
-    0 4px 8px rgba(255, 255, 255, 0.1) inset,
-    0 2px 4px rgba(255, 255, 255, 0.05) inset,
-    0 -2px 4px rgba(0, 0, 0, 0.1) inset;
+    0 0 20px rgba(0, 255, 0, 0.2),
+    0 8px 16px rgba(0, 255, 0, 0.1),
+    0 4px 8px rgba(0, 255, 0, 0.2) inset;
   transition: all 0.4s ease;
-  z-index: 10;
 }
 
 .skills-section::before {
@@ -720,15 +793,16 @@
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-  color: #cccccc;
+  color: #00ff00;
   font-size: 20px;
   font-weight: 700;
   margin-bottom: 20px;
   text-align: center;
-  border-bottom: 2px solid #cccccc;
+  border-bottom: 2px solid rgba(0, 255, 0, 0.3);
   padding-bottom: 10px;
   position: relative;
   z-index: 1;
+  text-shadow: 0 0 8px rgba(0, 255, 0, 0.4);
 }
 
 .skills-content {
@@ -748,21 +822,23 @@
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-  color: #cccccc;
+  color: #00ff00;
   font-size: 16px;
   font-weight: 600;
   margin-bottom: 8px;
   margin-top: 0;
+  text-shadow: 0 0 8px rgba(0, 255, 0, 0.4);
 }
 
 .skill-items {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-  color: #cccccc;
+  color: #7fff7f;
   font-size: 14px;
   margin: 0;
   line-height: 1.5;
+  text-shadow: 0 0 5px rgba(0, 255, 0, 0.3);
 }
 
 /* Responsive design for resume */
@@ -771,20 +847,26 @@
     padding: 15px;
   }
 
-  .education-section {
-    position: static;
-    width: 100%;
-    margin-bottom: 20px;
+  .resume-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
 
+  .resume-sidebar {
+    position: static;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .education-section,
   .skills-section {
     position: static;
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 0;
   }
 
-  .resume-text-container {
-    margin-left: 0;
+  .resume-main {
+    padding: 24px;
   }
 
   .resume-text {
@@ -797,11 +879,128 @@
     padding: 10px;
   }
 
-  .resume-text-container {
-    padding: 15px;
+  .resume-main {
+    padding: 20px;
   }
 
   .resume-text {
     font-size: 14px;
+  }
+}
+
+/* Matrix Miniplayer */
+.miniplayer {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background:
+    linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 25%, #333333 50%, #2a2a2a 75%, #1a1a1a 100%),
+    linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #2a2a2a 100%);
+  border: 2px solid rgba(0, 255, 0, 0.6);
+  border-radius: 15px;
+  padding: 15px 20px;
+  box-shadow:
+    0 0 25px rgba(0, 255, 0, 0.4),
+    0 8px 32px rgba(0, 0, 0, 0.6);
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  animation: matrixMiniplayerSlideIn 0.3s ease-out;
+}
+
+@keyframes matrixMiniplayerSlideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.miniplayer-content {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: #00ff00;
+}
+
+.miniplayer-info {
+  flex: 1;
+}
+
+.miniplayer-title {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #7fff7f;
+  text-shadow: 0 0 5px rgba(0, 255, 0, 0.3);
+  margin-bottom: 2px;
+}
+
+.miniplayer-track {
+  font-size: 12px;
+  font-weight: 500;
+  color: #00ff00;
+  text-shadow: 0 0 5px rgba(0, 255, 0, 0.4);
+}
+
+.miniplayer-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.miniplayer-btn {
+  background:
+    linear-gradient(135deg, #00ff00 0%, #7fff7f 50%, #00ff00 100%);
+  border: none;
+  border-radius: 8px;
+  padding: 8px 12px;
+  color: #000;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.4);
+}
+
+.miniplayer-btn:hover {
+  background:
+    linear-gradient(135deg, #7fff7f 0%, #00ff00 50%, #7fff7f 100%);
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.6);
+}
+
+.miniplayer-close {
+  background:
+    linear-gradient(135deg, #ff4444 0%, #ff6666 50%, #ff4444 100%);
+  box-shadow: 0 0 10px rgba(255, 68, 68, 0.4);
+}
+
+.miniplayer-close:hover {
+  background:
+    linear-gradient(135deg, #ff6666 0%, #ff4444 50%, #ff6666 100%);
+  box-shadow: 0 0 15px rgba(255, 68, 68, 0.6);
+}
+
+@media (max-width: 768px) {
+  .miniplayer {
+    bottom: 15px;
+    right: 15px;
+    padding: 12px 16px;
+  }
+
+  .miniplayer-title {
+    font-size: 9px;
+  }
+
+  .miniplayer-track {
+    font-size: 11px;
+  }
+
+  .miniplayer-btn {
+    padding: 6px 10px;
+    font-size: 12px;
   }
 }

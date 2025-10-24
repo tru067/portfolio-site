@@ -28,21 +28,21 @@ export default function AudioVisualizer({
   const [isPlaying, setIsPlaying] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
-  // Preset configurations
+  // Matrix-themed preset configurations
   const presets = {
     default: {
-      palette: ["#ff9966", "#ff5e62", "#ffd26f"],
+      palette: ["#00ff00", "#7fff7f", "#00cc00"],
       reactBass: 1.0,
       reactMid: 1.0,
       reactTreble: 1.0,
       fftSize: 2048,
       smoothing: 0.7,
-      volume: 0.8,
+      volume: 0.6, // Reduced by ~4db from 0.8
       glow: true,
       bgShift: true
     },
     electronic: {
-      palette: ["#00f5d4", "#f15bb5", "#fee440"],
+      palette: ["#00ff00", "#00ffff", "#7fff7f"],
       reactBass: 1.5,
       reactMid: 1.2,
       reactTreble: 1.0,
@@ -53,7 +53,7 @@ export default function AudioVisualizer({
       bgShift: true
     },
     ambient: {
-      palette: ["#aaf0ff", "#66c2ff", "#e6f7ff"],
+      palette: ["#7fff7f", "#00cc00", "#00ff00"],
       reactBass: 0.8,
       reactMid: 1.0,
       reactTreble: 1.3,
@@ -64,7 +64,7 @@ export default function AudioVisualizer({
       bgShift: true
     },
     pop: {
-      palette: ["#ff9966", "#ff5e62", "#ffd26f"],
+      palette: ["#00ff00", "#7fff7f", "#00cc00"],
       reactBass: 1.4,
       reactMid: 1.1,
       reactTreble: 1.2,
@@ -75,7 +75,7 @@ export default function AudioVisualizer({
       bgShift: false
     },
     rock: {
-      palette: ["#ff6b6b", "#4ecdc4", "#45b7d1"],
+      palette: ["#00ff00", "#00ffff", "#7fff7f"],
       reactBass: 1.3,
       reactMid: 1.2,
       reactTreble: 0.9,

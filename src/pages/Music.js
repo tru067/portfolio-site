@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import AudioVisualizer from '../components/AudioVisualizer';
 
-function Music() {
+function Music({ onTrackChange }) {
   const [selectedFolder, setSelectedFolder] = useState(null);
   const [selectedTrack, setSelectedTrack] = useState(null);
 
@@ -60,6 +60,10 @@ function Music() {
 
   const handleTrackChange = (trackIndex) => {
     setSelectedTrack(trackIndex);
+    // Also notify parent component about track change
+    if (onTrackChange && currentTracks[trackIndex]) {
+      onTrackChange(currentTracks[trackIndex]);
+    }
   };
 
   return (

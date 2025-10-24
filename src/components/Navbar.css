@@ -1,14 +1,14 @@
 /* Navbar styles */
 .navbar {
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 50%, #dee2e6 100%);
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0f0f0f 100%);
   background-attachment: fixed;
-  color: #000000;
+  color: #00ff00;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.8);
+  border-bottom: 2px solid rgba(0, 255, 0, 0.3);
   overflow: hidden;
 }
 
@@ -21,14 +21,14 @@
   right: 0;
   bottom: 0;
   background:
-    radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 40% 40%, rgba(120, 219, 226, 0.05) 0%, transparent 50%);
+    radial-gradient(circle at 20% 80%, rgba(0, 255, 0, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(0, 255, 0, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(0, 255, 255, 0.02) 0%, transparent 50%);
   pointer-events: none;
   z-index: -1;
 }
 
-/* Animated reflective light sweep */
+/* Animated reflective light sweep - toned down */
 .navbar::after {
   content: "";
   position: absolute;
@@ -36,8 +36,8 @@
   left: -60%;
   width: 60%;
   height: 100%;
-  background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.9) 50%, transparent 100%);
-  animation: shine 4s infinite linear;
+  background: linear-gradient(120deg, transparent 0%, rgba(0,255,0,0.3) 50%, transparent 100%);
+  animation: subtleShine 12s infinite linear;
   mix-blend-mode: screen;
   pointer-events: none;
   z-index: 2;
@@ -66,13 +66,14 @@
 .navbar-logo h1 {
   font-size: 24px;
   font-weight: 700;
-  color: #000000;
+  color: #00ff00;
   margin: 0;
   text-decoration: none;
-  background: linear-gradient(135deg, #4a4a4a 0%, #2a2a2a 100%);
+  background: linear-gradient(135deg, #00ff00 0%, #7fff7f 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
 }
 
 .navbar-logo p {
@@ -87,7 +88,7 @@
 .navbar-item {
   display: block;
   padding: 16px 24px;
-  color: #000000;
+  color: #00ff00;
   text-decoration: none;
   font-weight: 500;
   font-size: 16px;
@@ -96,6 +97,7 @@
   white-space: nowrap;
   position: relative;
   overflow: hidden;
+  text-shadow: 0 0 5px rgba(0, 255, 0, 0.3);
 }
 
 .navbar-item::before {
@@ -105,7 +107,7 @@
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(128, 128, 128, 0.15), transparent);
+  background: linear-gradient(90deg, transparent, rgba(0, 255, 0, 0.2), transparent);
   transition: left 0.3s;
 }
 
@@ -114,17 +116,19 @@
 }
 
 .navbar-item:hover {
-  background: linear-gradient(135deg, rgba(128, 128, 128, 0.15) 0%, rgba(64, 64, 64, 0.15) 100%);
-  color: #000000;
+  background: linear-gradient(135deg, rgba(0, 255, 0, 0.1) 0%, rgba(0, 200, 0, 0.1) 100%);
+  color: #7fff7f;
   transform: translateY(-2px);
-  border-bottom-color: #4a4a4a;
+  border-bottom-color: #00ff00;
+  text-shadow: 0 0 10px rgba(0, 255, 0, 0.6);
 }
 
 .navbar-item.active {
-  background: linear-gradient(135deg, rgba(128, 128, 128, 0.2) 0%, rgba(64, 64, 64, 0.2) 100%);
-  border-bottom-color: #4a4a4a;
-  color: #000000;
-  box-shadow: 0 2px 8px rgba(64, 64, 64, 0.4);
+  background: linear-gradient(135deg, rgba(0, 255, 0, 0.15) 0%, rgba(0, 200, 0, 0.15) 100%);
+  border-bottom-color: #00ff00;
+  color: #7fff7f;
+  box-shadow: 0 2px 8px rgba(0, 255, 0, 0.3);
+  text-shadow: 0 0 10px rgba(0, 255, 0, 0.6);
 }
 
 .logo-link {
@@ -172,6 +176,15 @@
 
 /* Chrome navbar animations */
 @keyframes shine {
+  0% {
+    left: -60%;
+  }
+  100% {
+    left: 160%;
+  }
+}
+
+@keyframes subtleShine {
   0% {
     left: -60%;
   }
