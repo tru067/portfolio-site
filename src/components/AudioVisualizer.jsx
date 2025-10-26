@@ -495,7 +495,7 @@ export default function AudioVisualizer({
         {/* Category Selection */}
         {folders.length > 0 && (
           <div className="cassette-categories">
-            <div className="category-label">playlists</div>
+            <div className="category-label">mixtapes</div>
             <div className="category-buttons">
               {folders.map((folder) => (
                 <button

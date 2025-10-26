@@ -73,18 +73,27 @@
   z-index: -1;
 }
 
-/* Matrix cassette tape screw holes */
+/* Beat up cassette tape with duct tape */
 .cassette-body::after {
-  content: '○ ○';
+  content: '';
   position: absolute;
-  top: 8px;
-  left: 50%;
-  transform: translateX(-50%);
-  color: #00ff00;
-  font-size: 8px;
-  letter-spacing: 40px;
-  font-family: monospace;
-  text-shadow: 0 0 5px rgba(0, 255, 0, 0.6);
+  top: 5px;
+  left: 15px;
+  width: 25px;
+  height: 15px;
+  background:
+    repeating-linear-gradient(
+      45deg,
+      rgba(150, 150, 150, 0.8) 0px,
+      rgba(150, 150, 150, 0.8) 3px,
+      rgba(120, 120, 120, 0.9) 3px,
+      rgba(120, 120, 120, 0.9) 6px
+    );
+  border-radius: 2px;
+  box-shadow:
+    0 0 3px rgba(0, 0, 0, 0.5),
+    inset 0 1px 1px rgba(255, 255, 255, 0.2);
+  transform: rotate(-5deg);
 }
 
 .cassette-controls {
@@ -243,6 +252,7 @@
   margin-bottom: 12px;
   opacity: 0.8;
   text-shadow: 0 0 5px rgba(0, 255, 0, 0.3);
+  content: 'MIXTAPES';
 }
 
 .category-buttons {
