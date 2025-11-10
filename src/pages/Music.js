@@ -37,12 +37,11 @@ function Music({ onTrackChange }) {
         { file: 'Vibe/wip bleh.mp3', name: 'wip' } // original: wip bleh
       ],
       'Score': [
-        { file: 'Score/1hollis balshdh.mp3', name: 'Hollis Groove' }, // original: 1hollis balshdh
+        { file: 'Score/spice lounge matrix set 80bpm with scratch mixdown 2_normalized.wav', name: 'Spice Lounge Matrix' }, // original: spice lounge matrix set 80bpm with scratch mixdown 2
         { file: 'Score/cc type beat 2 fast.mp3', name: 'Fast Type Beat' }, // original: cctype beat 2 fast
         { file: 'Score/DG bitch 2.mp3', name: 'Detroit Grit' }, // original: dg bitch 2
         { file: 'Score/DNB 177 HAPPIII real.mp3', name: 'DNB 177' },
-        { file: 'Score/funkalicious mixdown 3.wav', name: 'Funkalicious Mixdown' }, // original: funkalicious mixdown 3
-        { file: 'Score/spice lounge matrix set 80bpm with scratch mixdown 2.wav', name: 'Spice Lounge Matrix' }, // original: spice lounge matrix set 80bpm with scratch mixdown 2
+        { file: 'Score/funkalicious mixdown 3_normalized.wav', name: 'Funkalicious Mixdown' }, // original: funkalicious mixdown 3
         { file: 'Score/yaii happi core mix 2.mp3', name: 'Happy Hardcore Remix' } // original: happi core mix 2
       ]
     };
