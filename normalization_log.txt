@@ -1,0 +1,48 @@
+﻿Audio Normalization Log - 11/09/2025 17:18:11
+Target LUFS: -14.0
+========================================
+C:\Users\User\Desktop\1-portfolio-site\media\music\Dance\alex g jumpstyle.mp3 | ERROR | ERROR | ERROR | ERROR | FAILED
+C:\Users\User\Desktop\1-portfolio-site\media\music\Dance\alex g normal jumpstyle.mp3 | ERROR | ERROR | ERROR | ERROR | FAILED
+C:\Users\User\Desktop\1-portfolio-site\media\music\Dance\angelcore2.mp3 | ERROR | ERROR | ERROR | ERROR | FAILED
+C:\Users\User\Desktop\1-portfolio-site\media\music\Dance\cc type beat 2 slow.mp3 | ERROR | ERROR | ERROR | ERROR | FAILED
+C:\Users\User\Desktop\1-portfolio-site\media\music\Dance\cc ukg swag 9-19.mp3 | ERROR | ERROR | ERROR | ERROR | FAILED
+C:\Users\User\Desktop\1-portfolio-site\media\music\Dance\classic detroit house.mp3 | ERROR | ERROR | ERROR | ERROR | FAILED
+C:\Users\User\Desktop\1-portfolio-site\media\music\Dance\control.mp3 | ERROR | ERROR | ERROR | ERROR | FAILED
+C:\Users\User\Desktop\1-portfolio-site\media\music\Dance\happy ukg.mp3 | ERROR | ERROR | ERROR | ERROR | FAILED
+C:\Users\User\Desktop\1-portfolio-site\media\music\Dance\together again 162.mp3 | ERROR | ERROR | ERROR | ERROR | FAILED
+C:\Users\User\Desktop\1-portfolio-site\media\music\Dance\wip bleh 3.mp3 | ERROR | ERROR | ERROR | ERROR | FAILED
+C:\Users\User\Desktop\1-portfolio-site\media\music\Score\1hollis balshdh.mp3 | ERROR | ERROR | ERROR | ERROR | FAILED
+C:\Users\User\Desktop\1-portfolio-site\media\music\Score\cc type beat 2 fast.mp3 | ERROR | ERROR | ERROR | ERROR | FAILED
+C:\Users\User\Desktop\1-portfolio-site\media\music\Score\core as f.mp3 | ERROR | ERROR | ERROR | ERROR | FAILED
+C:\Users\User\Desktop\1-portfolio-site\media\music\Score\DG bitch 2.mp3 | ERROR | ERROR | ERROR | ERROR | FAILED
+C:\Users\User\Desktop\1-portfolio-site\media\music\Score\DNB 177 HAPPIII real.mp3 | ERROR | ERROR | ERROR | ERROR | FAILED
+C:\Users\User\Desktop\1-portfolio-site\media\music\Score\yaii happi core mix 2.mp3 | ERROR | ERROR | ERROR | ERROR | FAILED
+C:\Users\User\Desktop\1-portfolio-site\media\music\Vibe\faceit.mp3 | ERROR | ERROR | ERROR | ERROR | FAILED
+C:\Users\User\Desktop\1-portfolio-site\media\music\Vibe\forever.mp3 | ERROR | ERROR | ERROR | ERROR | FAILED
+C:\Users\User\Desktop\1-portfolio-site\media\music\Vibe\hey you.mp3 | ERROR | ERROR | ERROR | ERROR | FAILED
+C:\Users\User\Desktop\1-portfolio-site\media\music\Vibe\ringtone.mp3 | ERROR | ERROR | ERROR | ERROR | FAILED
+C:\Users\User\Desktop\1-portfolio-site\media\music\Vibe\shit innit MEL.mp3 | ERROR | ERROR | ERROR | ERROR | FAILED
+C:\Users\User\Desktop\1-portfolio-site\media\music\Vibe\soft melody.mp3 | ERROR | ERROR | ERROR | ERROR | FAILED
+C:\Users\User\Desktop\1-portfolio-site\media\music\Vibe\ukg wip chopped n screwed .mp3 | ERROR | ERROR | ERROR | ERROR | FAILED
+C:\Users\User\Desktop\1-portfolio-site\media\music\Vibe\wip bleh.mp3 | ERROR | ERROR | ERROR | ERROR | FAILED
+C:\Users\User\Desktop\1-portfolio-site\public\media\music\Dance\alex g jumpstyle.mp3 | ERROR | ERROR | ERROR | ERROR | FAILED
+C:\Users\User\Desktop\1-portfolio-site\public\media\music\Dance\alex g normal jumpstyle.mp3 | ERROR | ERROR | ERROR | ERROR | FAILED
+C:\Users\User\Desktop\1-portfolio-site\public\media\music\Dance\angelcore2.mp3 | ERROR | ERROR | ERROR | ERROR | FAILED
+C:\Users\User\Desktop\1-portfolio-site\public\media\music\Dance\cc type beat 2 slow.mp3 | ERROR | ERROR | ERROR | ERROR | FAILED
+C:\Users\User\Desktop\1-portfolio-site\public\media\music\Dance\cc ukg swag 9-19.mp3 | ERROR | ERROR | ERROR | ERROR | FAILED
+C:\Users\User\Desktop\1-portfolio-site\public\media\music\Dance\classic detroit house.mp3 | ERROR | ERROR | ERROR | ERROR | FAILED
+C:\Users\User\Desktop\1-portfolio-site\public\media\music\Dance\control.mp3 | ERROR | ERROR | ERROR | ERROR | FAILED
+C:\Users\User\Desktop\1-portfolio-site\public\media\music\Dance\happy ukg.mp3 | ERROR | ERROR | ERROR | ERROR | FAILED
+C:\Users\User\Desktop\1-portfolio-site\public\media\music\Dance\together again 162.mp3 | ERROR | ERROR | ERROR | ERROR | FAILED
+C:\Users\User\Desktop\1-portfolio-site\public\media\music\Dance\wip bleh 3.mp3 | ERROR | ERROR | ERROR | ERROR | FAILED
+C:\Users\User\Desktop\1-portfolio-site\public\media\music\Score\1hollis balshdh.mp3 | ERROR | ERROR | ERROR | ERROR | FAILED
+C:\Users\User\Desktop\1-portfolio-site\public\media\music\Score\cc type beat 2 fast.mp3 | ERROR | ERROR | ERROR | ERROR | FAILED
+C:\Users\User\Desktop\1-portfolio-site\public\media\music\Score\core as f.mp3 | ERROR | ERROR | ERROR | ERROR | FAILED
+C:\Users\User\Desktop\1-portfolio-site\public\media\music\Score\DG bitch 2.mp3 | ERROR | ERROR | ERROR | ERROR | FAILED
+C:\Users\User\Desktop\1-portfolio-site\public\media\music\Score\DNB 177 HAPPIII real.mp3 | ERROR | ERROR | ERROR | ERROR | FAILED
+C:\Users\User\Desktop\1-portfolio-site\public\media\music\Score\yaii happi core mix 2.mp3 | ERROR | ERROR | ERROR | ERROR | FAILED
+C:\Users\User\Desktop\1-portfolio-site\public\media\music\Vibe\backseat with a subwoofer.mp3 | ERROR | ERROR | ERROR | ERROR | FAILED
+C:\Users\User\Desktop\1-portfolio-site\public\media\music\Vibe\faceit.mp3 | ERROR | ERROR | ERROR | ERROR | FAILED
+C:\Users\User\Desktop\1-portfolio-site\public\media\music\Vibe\forever.mp3 | ERROR | ERROR | ERROR | ERROR | FAILED
+C:\Users\User\Desktop\1-portfolio-site\public\media\music\Vibe\hey you.mp3 | ERROR | ERROR | ERROR | ERROR | FAILED
+C:\Users\User\Desktop\1-portfolio-site\public\media\music\Vibe\ringtone.mp3 | ERROR | ERROR | ERROR | ERROR | FAILED

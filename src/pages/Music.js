@@ -8,39 +8,42 @@ function Music({ onTrackChange }) {
   // Define available folders and their properties
   const folders = [
     { name: 'Dance', path: 'Dance/', preset: 'electronic' },
-    { name: 'Groove', path: 'Groove/', preset: 'ambient' },
-    { name: 'Hype', path: 'Hype/', preset: 'rock' }
+    { name: 'Vibe', path: 'Vibe/', preset: 'ambient' },
+    { name: 'Score', path: 'Score/', preset: 'rock' }
   ];
 
   // Generate tracks based on selected folder
   const getTracksForFolder = (folderName) => {
     const folderMap = {
       'Dance': [
-        { file: 'Dance/1hollis balshdh.wav', name: '1hollis balshdh' },
-        { file: 'Dance/alex g jumpstyle.mp3', name: 'alex g jumpstyle' },
+        { file: 'Dance/core as f.mp3', name: 'Hardcore Energy' }, // original: core as f
+        { file: 'Dance/1hollis balshdh.wav', name: 'Hollis Groove' }, // original: 1hollis balshdh
         { file: 'Dance/alex g normal jumpstyle.mp3', name: 'normal jumpstyle' },
-        { file: 'Dance/angelcore2.mp3', name: 'angelcore2' },
+        { file: 'Dance/angelcore2.mp3', name: 'Angelic Dreams' }, // original: angelcore2
         { file: 'Dance/cc type beat 2 slow.mp3', name: 'cc type beat 2 slow' },
-        { file: 'Dance/cc ukg swag 9-19.mp3', name: 'cc ukg swag' },
+        { file: 'Dance/cc ukg swag 9-19.mp3', name: 'cc ukg' }, // original: cc ukg swag
         { file: 'Dance/classic detroit house.mp3', name: 'detroit house' },
-        { file: 'Dance/happy ukg.mp3', name: 'happy ukg' }
+        { file: 'Dance/control.mp3', name: 'control' },
+        { file: 'Dance/happy ukg.mp3', name: 'Joyful Garage' }, // original: happy ukg
+        { file: 'Dance/together again 162.mp3', name: 'together again 162' }
       ],
-      'Groove': [
-        { file: 'Groove/fakemink faceit.mp3', name: 'fakemink faceit' },
-        { file: 'Groove/forever.mp3', name: 'forever' },
-        { file: 'Groove/junglista niiice and easy.wav', name: 'junglista' },
-        { file: 'Groove/ringtone.mp3', name: 'ringtone' },
-        { file: 'Groove/shit innit MEL.mp3', name: 'shit innit' },
-        { file: 'Groove/triplet loop 926 MEL.mp3', name: 'triplet loop' },
-        { file: 'Groove/ukg wip chopped n screwed .mp3', name: 'ukg wip' },
-        { file: 'Groove/wip bleh.mp3', name: 'wip bleh' }
+      'Vibe': [
+        { file: 'Vibe/backseat with a subwoofer.mp3', name: 'backseat with a subwoofer' },
+        { file: 'Vibe/hey you.mp3', name: 'hey you' },
+        { file: 'Vibe/junglista niiice and easy.wav', name: 'junglista' },
+        { file: 'Vibe/ringtone.mp3', name: 'ringtone' },
+        { file: 'Vibe/shit innit MEL.mp3', name: 'Reality Check' }, // original: shit innit
+        { file: 'Vibe/soft melody.mp3', name: 'soft melody' },
+        { file: 'Vibe/wip bleh.mp3', name: 'wip' } // original: wip bleh
       ],
-      'Hype': [
-        { file: 'Hype/1hollis balshdh.mp3', name: '1hollis balshdh' },
-        { file: 'Hype/cc type beat 2 fast.mp3', name: 'cc type beat 2 fast' },
-        { file: 'Hype/core as f.mp3', name: 'core as f' },
-        { file: 'Hype/DNB 177 HAPPIII real.mp3', name: 'DNB 177' },
-        { file: 'Hype/yaii happi core mix 2.mp3', name: 'happi core mix 2' }
+      'Score': [
+        { file: 'Score/1hollis balshdh.mp3', name: 'Hollis Groove' }, // original: 1hollis balshdh
+        { file: 'Score/cc type beat 2 fast.mp3', name: 'Fast Type Beat' }, // original: cctype beat 2 fast
+        { file: 'Score/DG bitch 2.mp3', name: 'Detroit Grit' }, // original: dg bitch 2
+        { file: 'Score/DNB 177 HAPPIII real.mp3', name: 'DNB 177' },
+        { file: 'Score/funkalicious mixdown 3.wav', name: 'Funkalicious Mixdown' }, // original: funkalicious mixdown 3
+        { file: 'Score/spice lounge matrix set 80bpm with scratch mixdown 2.wav', name: 'Spice Lounge Matrix' }, // original: spice lounge matrix set 80bpm with scratch mixdown 2
+        { file: 'Score/yaii happi core mix 2.mp3', name: 'Happy Hardcore Remix' } // original: happi core mix 2
       ]
     };
 

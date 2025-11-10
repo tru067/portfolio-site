@@ -599,14 +599,22 @@ html, body {
 }
 
 .video-showcase {
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
-  background: #000;
   width: 75%;
   max-width: 800px;
   justify-self: center;
   align-self: start;
+}
+
+.video-caption {
+  font-size: 18px;
+  font-weight: 600;
+  color: #00ff00;
+  margin-top: 20px;
+  text-align: center;
+  text-transform: lowercase;
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px rgba(0, 255, 0, 0.6);
+  animation: matrixTitlePulse 4s ease-in-out infinite;
 }
 
 .portfolio-video {
@@ -1279,9 +1287,10 @@ html, body {
 /* Contact page */
 .contact-layout {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
+  grid-template-columns: 350px 1fr 1fr;
+  gap: 40px;
   margin-top: 40px;
+  align-items: start;
 }
 
 .contact-form-container {
@@ -1296,42 +1305,12 @@ html, body {
 
 .contact-form-card,
 .contact-info-card {
-  background:
-    linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 25%, #333333 50%, #2a2a2a 75%, #1a1a1a 100%),
-    linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #2a2a2a 100%);
-  border-radius: 12px;
-  padding: 40px;
-  border: 2px solid rgba(0, 255, 0, 0.3);
+  background: transparent;
+  border: none;
+  padding: 20px 0;
+  box-shadow: none;
   height: fit-content;
-  box-shadow:
-    0 0 20px rgba(0, 255, 0, 0.2),
-    0 8px 16px rgba(0, 255, 0, 0.1),
-    0 4px 8px rgba(0, 255, 0, 0.2) inset;
   transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-
-
-.contact-form-card::before,
-.contact-info-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border-radius: 12px;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, transparent 50%, rgba(0, 0, 0, 0.05) 100%);
-  pointer-events: none;
-  opacity: 0.3;
-  animation: shineAnimation 4s infinite linear;
-}
-
-.contact-form-card:hover::before,
-.contact-info-card:hover::before {
-  opacity: 0.5;
 }
 
 .contact-intro {
@@ -1395,26 +1374,31 @@ html, body {
   text-shadow: 0 0 5px rgba(0, 255, 0, 0.3);
 }
 
-.contact-profile {
+/* Contact Side Image */
+.contact-image-container {
   display: flex;
-  justify-content: flex-start;
-  margin-top: 40px;
-  padding-top: 30px;
-  border-top: 1px solid rgba(0, 255, 0, 0.3);
+  align-items: flex-start;
+  justify-content: center;
 }
 
-.contact-profile-image {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
+.contact-side-image {
+  max-width: 350px;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
   object-fit: cover;
-  border: 6px solid rgba(0, 255, 0, 0.6);
+  border: 3px solid rgba(0, 255, 0, 0.4);
   box-shadow:
-    0 0 15px rgba(0, 255, 0, 0.4),
-    0 8px 20px rgba(0, 255, 0, 0.2),
-    0 4px 8px rgba(0, 255, 0, 0.2) inset,
-    inset 0 1px 0 rgba(0, 255, 0, 0.3);
+    0 0 20px rgba(0, 255, 0, 0.3),
+    0 8px 32px rgba(0, 0, 0, 0.4);
   transition: all 0.3s ease;
+}
+
+.contact-side-image:hover {
+  transform: scale(1.02);
+  box-shadow:
+    0 0 30px rgba(0, 255, 0, 0.4),
+    0 12px 40px rgba(0, 0, 0, 0.5);
 }
 
 
@@ -1593,14 +1577,18 @@ html, body {
     gap: 30px;
   }
 
+  .contact-image-container {
+    order: -1;
+    margin-bottom: 20px;
+  }
+
+  .contact-side-image {
+    max-width: 300px;
+  }
+
   .contact-form-card,
   .contact-info-card {
     padding: 30px 20px;
-  }
-
-  .contact-profile-image {
-    width: 120px;
-    height: 120px;
   }
 
   /* Matrix content flow responsive */

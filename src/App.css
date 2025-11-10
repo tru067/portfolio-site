@@ -668,33 +668,8 @@
 .education-section {
   position: static;
   width: 100%;
-  background:
-    linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 25%, #333333 50%, #2a2a2a 75%, #1a1a1a 100%),
-    linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #2a2a2a 100%);
-  border-radius: 20px;
   padding: 24px;
-  border: 2px solid rgba(0, 255, 0, 0.3);
-  box-shadow:
-    0 0 20px rgba(0, 255, 0, 0.2),
-    0 8px 16px rgba(0, 255, 0, 0.1),
-    0 4px 8px rgba(0, 255, 0, 0.2) inset;
   transition: all 0.4s ease;
-}
-
-.education-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border-radius: 20px;
-  background:
-    conic-gradient(from 45deg at 20% 20%, rgba(255, 255, 255, 0.8) 0deg, transparent 60deg, transparent 180deg, rgba(0, 0, 0, 0.1) 240deg, transparent 300deg),
-    radial-gradient(ellipse at 30% 30%, rgba(255, 255, 255, 0.6) 0%, transparent 50%);
-  pointer-events: none;
-  opacity: 0.3;
-  animation: shineAnimation 4s infinite linear;
 }
 
 .education-title {
@@ -770,33 +745,8 @@
   position: static;
   width: 100%;
   margin-top: 20px;
-  background:
-    linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 25%, #333333 50%, #2a2a2a 75%, #1a1a1a 100%),
-    linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #2a2a2a 100%);
-  border-radius: 20px;
   padding: 24px;
-  border: 2px solid rgba(0, 255, 0, 0.3);
-  box-shadow:
-    0 0 20px rgba(0, 255, 0, 0.2),
-    0 8px 16px rgba(0, 255, 0, 0.1),
-    0 4px 8px rgba(0, 255, 0, 0.2) inset;
   transition: all 0.4s ease;
-}
-
-.skills-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border-radius: 20px;
-  background:
-    conic-gradient(from 45deg at 20% 20%, rgba(255, 255, 255, 0.8) 0deg, transparent 60deg, transparent 180deg, rgba(0, 0, 0, 0.1) 240deg, transparent 300deg),
-    radial-gradient(ellipse at 30% 30%, rgba(255, 255, 255, 0.6) 0%, transparent 50%);
-  pointer-events: none;
-  opacity: 0.3;
-  animation: shineAnimation 4s infinite linear;
 }
 
 .skills-title {

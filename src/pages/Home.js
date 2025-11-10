@@ -58,7 +58,7 @@ function Home() {
         <div className="hero-content">
           <div className="hero-description">
             <h1 className="hero-title matrix-title">Music, Storytelling, and Sound Design</h1>
-            <p className="matrix-description">I'm Truman Gaynes, a New York-based music technologist and licensing coordinator connecting sound to story across entertainment, fashion, and brands. I compose daily, edit dialogue and ADR, and manage organized delivery workflows that help creative teams move faster.</p>
+            <p className="matrix-description">I’m Truman Gaynes, a New York based music technologist and licensing coordinator dedicated to connecting sound and story across entertainment, fashion, and brand worlds. I compose and design sound daily, blending technical precision with creative instinct, while deepening my expertise in licensing and music supervision.</p> 
           </div>
         </div>
       </div>
@@ -84,7 +84,7 @@ function Home() {
         <div className="my-story">
           <h3 className="story-title">My Story</h3>
           <div className="story-content">
-            <p>My background in Music Technology and the Business of Entertainment (NYU) bridges the creative and logistical sides of sound. I've worked on dozens of original compositions, including for New York Fashion Week, interactive scores for indie games, and helping with custom pitches at Tuner Music for global brands.</p>
+            <p>My background in Music Technology and the Business of Entertainment (NYU) bridges the creative and logistical sides of sound. I’ve contributed to original compositions for New York Fashion Week, interactive scores for indie games, and custom music pitches at Tuner Music for global brands.</p>
           </div>
         </div>
 
@@ -108,6 +108,7 @@ function Home() {
               </div>
             </div>
           </div>
+          <h3 className="video-caption">click to unmute</h3>
         </div>
       </div>
 
@@ -133,11 +134,12 @@ function Home() {
               </div>
             </div>
           </div>
+          <h3 className="video-caption">click to unmute</h3>
         </div>
 
         <div className="my-story">
           <div className="story-content">
-            <p>I'm passionate about how music transcends borders and mediums, using sound to shape emotional and interactive experiences. My work thrives at the intersection of composition, storytelling, and technology—collaborating with diverse artists worldwide to craft music that not only supports narrative but drives it forward.</p>
+            <p>I’m drawn to the psychology of sound. How certain tones, rhythms, and textures can instantly communicate identity. My work in fashion, games, and branded storytelling continues to deepen my passion for sonic branding: using music as a language that defines how a story is perceived and remembered.</p>
           </div>
         </div>
       </div>

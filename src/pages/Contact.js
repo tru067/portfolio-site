@@ -81,8 +81,17 @@ function Contact() {
         <p className="page-subtitle">Get in touch for collaborations and inquiries</p>
       </div>
 
-      {/* Two Column Layout */}
+      {/* Three Column Layout with Image */}
       <div className="contact-layout">
+        {/* Left Column - Portfolio Image */}
+        <div className="contact-image-container">
+          <img
+            src="/media/images/portfolio pic.jpg"
+            alt="Portfolio"
+            className="contact-side-image"
+          />
+        </div>
+
         {/* Left Column - Contact Form */}
         <div className="contact-form-container">
           <div className="contact-form-card">
@@ -195,18 +204,6 @@ function Contact() {
                   <div className="contact-value">Manhattan, New York</div>
                 </div>
               </div>
-            </div>
-
-            {/* Profile Image */}
-            <div className="contact-profile">
-              <img
-                src="/media/images/profile.png"
-                alt="Profile"
-                className="contact-profile-image"
-                onError={(e) => {
-                  e.target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTUwIiBoZWlnaHQ9IjE1MCIgdmlld0JveD0iMCAwIDE1MCAxNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxNTAiIGhlaWdodD0iMTUwIiBmaWxsPSIjRjVGNUY1Ii8+CjxjaXJjbGUgY3g9Ijc1IiBjeT0iNjAiIHI9IjI1IiBmaWxsPSIjQ0NDQ0NDIi8+CjxwYXRoIGQ9Ik01MCAxMjBDNTAgMTAwIDUwIDgwIDc1IDgwQzk5IDgwIDEwMCA5NSA5OSAxMjAiIGZpbGw9IiNDQ0NDQ0MiLz4KPC9zdmc+';
-                }}
-              />
             </div>
           </div>
         </div>
