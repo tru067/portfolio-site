@@ -135,20 +135,13 @@ export default function AudioVisualizer({
 
     const ctx = await ensureAudio();
 
-    const fileExtension = currentTrack.file.split('.').pop().toLowerCase();
-    const isMP3 = fileExtension === 'mp3';
-
-    const headers = {
-      'Accept': isMP3 ? 'audio/mpeg' : 'audio/wav',
-    };
-
+    // Removed custom Accept headers - let browser handle content negotiation
     const response = await fetch(`/media/music/${currentTrack.file}`, {
       method: 'GET',
-      headers: headers,
     });
 
     if (!response.ok) {
-      throw new Error(`HTTP ${response.status}: ${response.statusText} - File: ${currentTrack.file}`);
+      throw new Error(`Failed to load audio: ${response.status} ${response.statusText}`);
     }
 
     const arrayBuffer = await response.arrayBuffer();
@@ -157,11 +150,7 @@ export default function AudioVisualizer({
       const audioBuffer = await ctx.decodeAudioData(arrayBuffer);
       bufferRef.current = audioBuffer;
     } catch (decodeError) {
-      if (isMP3) {
-        throw new Error(`MP3 decoding failed: ${currentTrack.file}. This could be due to browser compatibility or MP3 encoding issues.`);
-      } else {
-        throw new Error(`Audio decoding failed: ${currentTrack.file}. The file format may not be supported.`);
-      }
+      throw new Error(`Audio decoding failed for ${currentTrack.name}. The file may be corrupted or in an unsupported format.`);
     }
   };
 
@@ -350,60 +339,74 @@ export default function AudioVisualizer({
 
   // Handle track button clicks - play on first press, toggle for current track
   const handleTrackClick = async (index) => {
-    const targetTrack = tracks[index];
+    try {
+      // CRITICAL: Initialize AudioContext on every button click for Safari/iOS
+      await initializeAudioContext();
+      
+      const targetTrack = tracks[index];
 
-    if (currentTrackIndex === index) {
-      // Clicking the same track - toggle play/pause
-      if (isPlaying) {
-        pause();
-      } else {
-        await play();
-      }
-    } else {
-      // Changing to a different track - stop current, switch track, then play new track
-      if (isPlaying) {
-        pause();
-      }
-
-      // Set loading state
-      setIsLoading(true);
-
-      // Update parent component state first
-      onTrackChange && onTrackChange(index);
-
-      // Wait for state update and load the new track
-      if (targetTrack && targetTrack.file) {
-        try {
-          // Load the new track immediately using the target track data
-          const ctx = await ensureAudio();
-
-          const fileExtension = targetTrack.file.split('.').pop().toLowerCase();
-          const isMP3 = fileExtension === 'mp3';
-          const headers = { 'Accept': isMP3 ? 'audio/mpeg' : 'audio/wav' };
-
-          const response = await fetch(`/media/music/${targetTrack.file}`, {
-            method: 'GET',
-            headers: headers,
-          });
-
-          if (response.ok) {
-            const arrayBuffer = await response.arrayBuffer();
-            const audioBuffer = await ctx.decodeAudioData(arrayBuffer);
-
-            // Update buffer with new track
-            bufferRef.current = audioBuffer;
-
-            // Now play the new track
-            await playWithBuffer(audioBuffer);
-          }
-        } catch (error) {
-          console.error("Failed to load new track:", error);
-        } finally {
-          setIsLoading(false);
+      if (currentTrackIndex === index) {
+        // Clicking the same track - toggle play/pause
+        if (isPlaying) {
+          pause();
+        } else {
+          await play();
         }
       } else {
-        setIsLoading(false);
+        // Changing to a different track - stop current, switch track, then play new track
+        if (isPlaying) {
+          pause();
+        }
+
+        // Set loading state
+        setIsLoading(true);
+
+        // Update parent component state first
+        onTrackChange && onTrackChange(index);
+
+        // Wait for state update and load the new track
+        if (targetTrack && targetTrack.file) {
+          try {
+            // Load the new track immediately using the target track data
+            const ctx = await ensureAudio();
+
+            const fileExtension = targetTrack.file.split('.').pop().toLowerCase();
+            const isMP3 = fileExtension === 'mp3';
+
+            // Removed custom Accept headers - let browser handle content negotiation
+            const response = await fetch(`/media/music/${targetTrack.file}`, {
+              method: 'GET',
+            });
+
+            if (!response.ok) {
+              throw new Error(`Failed to load audio: ${response.status} ${response.statusText}`);
+            }
+
+            const arrayBuffer = await response.arrayBuffer();
+            
+            try {
+              const audioBuffer = await ctx.decodeAudioData(arrayBuffer);
+
+              // Update buffer with new track
+              bufferRef.current = audioBuffer;
+
+              // Now play the new track
+              await playWithBuffer(audioBuffer);
+            } catch (decodeError) {
+              throw new Error(`Audio decoding failed for ${targetTrack.name}. The file may be corrupted or in an unsupported format.`);
+            }
+          } catch (error) {
+            console.error("Failed to load new track:", error);
+            alert(`Failed to load track: ${targetTrack.name}\n${error.message}`);
+            setIsLoading(false);
+          }
+        } else {
+          setIsLoading(false);
+        }
       }
+    } catch (error) {
+      console.error("Track click error:", error);
+      setIsLoading(false);
     }
   };
 

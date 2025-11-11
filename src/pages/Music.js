@@ -16,8 +16,6 @@ function Music({ onTrackChange }) {
   const getTracksForFolder = (folderName) => {
     const folderMap = {
       'Dance': [
-        { file: 'Dance/core as f.mp3', name: 'Hardcore Energy' }, // original: core as f
-        { file: 'Dance/1hollis balshdh.wav', name: 'Hollis Groove' }, // original: 1hollis balshdh
         { file: 'Dance/alex g normal jumpstyle.mp3', name: 'normal jumpstyle' },
         { file: 'Dance/angelcore2.mp3', name: 'Angelic Dreams' }, // original: angelcore2
         { file: 'Dance/cc type beat 2 slow.mp3', name: 'cc type beat 2 slow' },
@@ -30,18 +28,16 @@ function Music({ onTrackChange }) {
       'Vibe': [
         { file: 'Vibe/backseat with a subwoofer.mp3', name: 'backseat with a subwoofer' },
         { file: 'Vibe/hey you.mp3', name: 'hey you' },
-        { file: 'Vibe/junglista niiice and easy.wav', name: 'junglista' },
         { file: 'Vibe/ringtone.mp3', name: 'ringtone' },
         { file: 'Vibe/shit innit MEL.mp3', name: 'Reality Check' }, // original: shit innit
         { file: 'Vibe/soft melody.mp3', name: 'soft melody' },
         { file: 'Vibe/wip bleh.mp3', name: 'wip' } // original: wip bleh
       ],
       'Score': [
-        { file: 'Score/spice lounge matrix set 80bpm with scratch mixdown 2_normalized.wav', name: 'Spice Lounge Matrix' }, // original: spice lounge matrix set 80bpm with scratch mixdown 2
+        { file: 'Score/1hollis balshdh.mp3', name: 'Hollis Groove' }, // original: 1hollis balshdh (moved from Dance, using MP3)
         { file: 'Score/cc type beat 2 fast.mp3', name: 'Fast Type Beat' }, // original: cctype beat 2 fast
         { file: 'Score/DG bitch 2.mp3', name: 'Detroit Grit' }, // original: dg bitch 2
         { file: 'Score/DNB 177 HAPPIII real.mp3', name: 'DNB 177' },
-        { file: 'Score/funkalicious mixdown 3_normalized.wav', name: 'Funkalicious Mixdown' }, // original: funkalicious mixdown 3
         { file: 'Score/yaii happi core mix 2.mp3', name: 'Happy Hardcore Remix' } // original: happi core mix 2
       ]
     };
