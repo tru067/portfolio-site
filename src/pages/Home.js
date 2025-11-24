@@ -44,21 +44,32 @@ function Home() {
       {/* Hero Section - 2 Column Layout with Matrix Effects */}
       <div className="hero-section-2col">
         <div className="hero-image matrix-image-container">
-            <img
-              src="/media/images/profile.png"
-              alt="Truman Gaynes at work"
-              className="hero-img matrix-image"
-              onError={(e) => {
-                e.target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDQwMCAzMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMzAwIiBmaWxsPSIjRjVGNUY1Ii8+CjxjaXJjbGUgY3g9IjIwMCIgY3k9IjE1MCIgcj0iNDAiIGZpbGw9IiNDQ0NDQ0MiLz4KPC9zdmc+';
-              }}
+          <div className="portfolio-video matrix-video-container">
+            <video
+              className="matrix-video"
+              src="/media/images/STRANGELOVE_SETS.MOV"
+              title="Strangelove Sets Video"
+              loop
+              muted={!mutedVideos['video3']}
+              autoPlay
+              playsInline
+              onClick={() => toggleVideoMute('video3')}
+              volume="0.6"
             />
-            <div className="matrix-image-overlay"></div>
+            <div className="video-overlay">
+              <div className="video-controls">
+                <span className="muted-indicator">{mutedVideos['video3'] === false ? '🔊' : '🔇'}</span>
+                <span className="click-to-unmute">{mutedVideos['video3'] === false ? 'Click to mute' : 'Click to unmute'}</span>
+              </div>
+            </div>
+          </div>
+          <h3 className="video-caption">click to unmute</h3>
         </div>
 
         <div className="hero-content">
           <div className="hero-description">
             <h1 className="hero-title matrix-title">Music, Storytelling, and Sound Design</h1>
-            <p className="matrix-description">I’m Truman Gaynes, a New York based music technologist and licensing coordinator dedicated to connecting sound and story across entertainment, fashion, and brand worlds. I compose and design sound daily, blending technical precision with creative instinct, while deepening my expertise in licensing and music supervision.</p> 
+            <p className="matrix-description">I'm Truman Gaynes, a New York based music technologist and licensing coordinator dedicated to connecting sound and story across entertainment, fashion, and brand worlds. I compose and design sound daily, blending technical accumen with creative instinct, while furthering my expertise in music licensing and administration.</p>
           </div>
         </div>
       </div>
@@ -84,7 +95,7 @@ function Home() {
         <div className="my-story">
           <h3 className="story-title">My Story</h3>
           <div className="story-content">
-            <p>My background in Music Technology and the Business of Entertainment (NYU) bridges the creative and logistical sides of sound. I’ve contributed to original compositions for New York Fashion Week, interactive scores for indie games, and custom music pitches at Tuner Music for global brands.</p>
+            <p>My background in Music Technology and the Business of Entertainment (NYU) bridges the creative and logistical sides of sound. I've contributed to original compositions for New York Fashion Week, interactive scores for indie games, and custom music pitches at Tuner Music for global brands.</p>
           </div>
         </div>
 
@@ -139,7 +150,7 @@ function Home() {
 
         <div className="my-story">
           <div className="story-content">
-            <p>I’m drawn to the psychology of sound. How certain tones, rhythms, and textures can instantly communicate identity. My work in fashion, games, and branded storytelling continues to deepen my passion for sonic branding: using music as a language that defines how a story is perceived and remembered.</p>
+            <p>I'm drawn to the psychology of sound. How certain tones, rhythms, and textures can instantly communicate identity. My work in fashion, games, and branded storytelling continues to deepen my passion for sonic branding: using music as a language that defines how a story is perceived and remembered.</p>
           </div>
         </div>
       </div>

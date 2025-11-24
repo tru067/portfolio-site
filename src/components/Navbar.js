@@ -22,16 +22,16 @@ function Navbar() {
             About
           </Link>
           <Link
-            to="/music"
-            className={`navbar-item ${activeTab === '/music' ? 'active' : ''}`}
-          >
-            Music
-          </Link>
-          <Link
             to="/resume"
             className={`navbar-item ${activeTab === '/resume' ? 'active' : ''}`}
           >
             Resume
+          </Link>
+          <Link
+            to="/music"
+            className={`navbar-item ${activeTab === '/music' ? 'active' : ''}`}
+          >
+            Music
           </Link>
           <Link
             to="/contact"
